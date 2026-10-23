@@ -287,22 +287,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-    function updateProfil() {
-        document.getElementById("update").scrollIntoView({
-            behavior: "smooth"
-        });
-    }
+    
+function simpanUpdate() {
+    const nama = document.getElementById("nama").value.trim();
+    const deskripsi = document.getElementById("deskripsi").value.trim();
 
-    function simpanUpdate() {
-        document.querySelector(".hero h1").textContent =
-            document.getElementById("nama").value;
-
-        document.querySelector(".hero p").textContent =
-            document.getElementById("deskripsi").value;
-
+    if (nama === "" || deskripsi === "") {
         document.getElementById("pesan").textContent =
-            "Profil berhasil diperbarui pada tampilan ini!";
+            "Nama dan deskripsi tidak boleh kosong.";
+        return;
     }
+
+    document.getElementById("namaTampilan").textContent = nama;
+    document.getElementById("deskripsiTampilan").textContent = deskripsi;
+
+    document.getElementById("pesan").textContent =
+        "Profil berhasil diperbarui pada tampilan ini!";
+}
 </script>
     
 
